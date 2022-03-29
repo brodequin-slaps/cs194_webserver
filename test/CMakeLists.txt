@@ -1,7 +1,7 @@
 #Standalone unit tests definition
 
 cmake_minimum_required(VERSION 3.10)
-project(gtest_conan_cmake_templateTests)
+project(cs194_webserverTests)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -16,23 +16,23 @@ include_directories(..)
 #find_package(GTest MODULE REQUIRED)
 
 #here, we only want to find package if we run the standalone tests.
-#if we are being run from top level, we already know about gtest_conan_cmake_template package
+#if we are being run from top level, we already know about cs194_webserver package
 #and we wont enter in the if branch.
 
-#if(NOT TARGET geranim0::gtest_conan_cmake_template)
-#    find_package(gtest_conan_cmake_template CONFIG REQUIRED)
+#if(NOT TARGET geranim0::cs194_webserver)
+#    find_package(cs194_webserver CONFIG REQUIRED)
 #endif()
 #
 ##target definition
-#add_executable(gtest_conan_cmake_templateTests tests.cpp)
-#target_link_libraries(gtest_conan_cmake_templateTest
+#add_executable(cs194_webserverTests tests.cpp)
+#target_link_libraries(cs194_webserverTest
 #    PRIVATE
-#        geranim0::gtest_conan_cmake_template
+#        geranim0::cs194_webserver
 #        GTest::Main
 #)
 #
-#add_test(NAME gtest_conan_cmake_template.UnitTests
-#    COMMAND gtest_conan_cmake_templateTests
+#add_test(NAME cs194_webserver.UnitTests
+#    COMMAND cs194_webserverTests
 #)
 
 
@@ -43,11 +43,11 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
 add_executable(
-    gtest_conan_cmake_templateTests
+    cs194_webserverTests
     main.test.cpp
 )
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${CONAN_LIBS})
 
 include(GoogleTest)
-gtest_discover_tests(gtest_conan_cmake_templateTests)
+gtest_discover_tests(cs194_webserverTests)

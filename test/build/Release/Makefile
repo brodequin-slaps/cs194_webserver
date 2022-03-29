@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sam/development/UniqueProjectName/test
+CMAKE_SOURCE_DIR = /home/sam/development/cs194/webserver/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sam/development/UniqueProjectName/test/build/Release
+CMAKE_BINARY_DIR = /home/sam/development/cs194/webserver/test/build/Release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,9 +91,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sam/development/UniqueProjectName/test/build/Release/CMakeFiles /home/sam/development/UniqueProjectName/test/build/Release/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sam/development/cs194/webserver/test/build/Release/CMakeFiles /home/sam/development/cs194/webserver/test/build/Release/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sam/development/UniqueProjectName/test/build/Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sam/development/cs194/webserver/test/build/Release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -252,6 +252,19 @@ ExperimentalMemCheck/fast:
 .PHONY : ExperimentalMemCheck/fast
 
 #=============================================================================
+# Target rules for targets named ExperimentalSubmit
+
+# Build rule for target.
+ExperimentalSubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalSubmit
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	$(MAKE) -f CMakeFiles/ExperimentalSubmit.dir/build.make CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+#=============================================================================
 # Target rules for targets named Experimental
 
 # Build rule for target.
@@ -369,32 +382,6 @@ NightlyCoverage/fast:
 .PHONY : NightlyCoverage/fast
 
 #=============================================================================
-# Target rules for targets named ExperimentalSubmit
-
-# Build rule for target.
-ExperimentalSubmit: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalSubmit
-.PHONY : ExperimentalSubmit
-
-# fast build rule for target.
-ExperimentalSubmit/fast:
-	$(MAKE) -f CMakeFiles/ExperimentalSubmit.dir/build.make CMakeFiles/ExperimentalSubmit.dir/build
-.PHONY : ExperimentalSubmit/fast
-
-#=============================================================================
-# Target rules for targets named gtest_conan_cmake_templateTests
-
-# Build rule for target.
-gtest_conan_cmake_templateTests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_conan_cmake_templateTests
-.PHONY : gtest_conan_cmake_templateTests
-
-# fast build rule for target.
-gtest_conan_cmake_templateTests/fast:
-	$(MAKE) -f CMakeFiles/gtest_conan_cmake_templateTests.dir/build.make CMakeFiles/gtest_conan_cmake_templateTests.dir/build
-.PHONY : gtest_conan_cmake_templateTests/fast
-
-#=============================================================================
 # Target rules for targets named ExperimentalStart
 
 # Build rule for target.
@@ -498,13 +485,26 @@ ContinuousSubmit/fast:
 	$(MAKE) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
+#=============================================================================
+# Target rules for targets named cs194_webserverTests
+
+# Build rule for target.
+cs194_webserverTests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cs194_webserverTests
+.PHONY : cs194_webserverTests
+
+# fast build rule for target.
+cs194_webserverTests/fast:
+	$(MAKE) -f CMakeFiles/cs194_webserverTests.dir/build.make CMakeFiles/cs194_webserverTests.dir/build
+.PHONY : cs194_webserverTests/fast
+
 main.test.o: main.test.cpp.o
 
 .PHONY : main.test.o
 
 # target to build an object file
 main.test.cpp.o:
-	$(MAKE) -f CMakeFiles/gtest_conan_cmake_templateTests.dir/build.make CMakeFiles/gtest_conan_cmake_templateTests.dir/main.test.cpp.o
+	$(MAKE) -f CMakeFiles/cs194_webserverTests.dir/build.make CMakeFiles/cs194_webserverTests.dir/main.test.cpp.o
 .PHONY : main.test.cpp.o
 
 main.test.i: main.test.cpp.i
@@ -513,7 +513,7 @@ main.test.i: main.test.cpp.i
 
 # target to preprocess a source file
 main.test.cpp.i:
-	$(MAKE) -f CMakeFiles/gtest_conan_cmake_templateTests.dir/build.make CMakeFiles/gtest_conan_cmake_templateTests.dir/main.test.cpp.i
+	$(MAKE) -f CMakeFiles/cs194_webserverTests.dir/build.make CMakeFiles/cs194_webserverTests.dir/main.test.cpp.i
 .PHONY : main.test.cpp.i
 
 main.test.s: main.test.cpp.s
@@ -522,7 +522,7 @@ main.test.s: main.test.cpp.s
 
 # target to generate assembly for a file
 main.test.cpp.s:
-	$(MAKE) -f CMakeFiles/gtest_conan_cmake_templateTests.dir/build.make CMakeFiles/gtest_conan_cmake_templateTests.dir/main.test.cpp.s
+	$(MAKE) -f CMakeFiles/cs194_webserverTests.dir/build.make CMakeFiles/cs194_webserverTests.dir/main.test.cpp.s
 .PHONY : main.test.cpp.s
 
 # Help Target
@@ -544,6 +544,7 @@ help:
 	@echo "... ContinuousUpdate"
 	@echo "... NightlyUpdate"
 	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalSubmit"
 	@echo "... Experimental"
 	@echo "... ContinuousCoverage"
 	@echo "... ExperimentalConfigure"
@@ -553,8 +554,6 @@ help:
 	@echo "... NightlyStart"
 	@echo "... ExperimentalCoverage"
 	@echo "... NightlyCoverage"
-	@echo "... ExperimentalSubmit"
-	@echo "... gtest_conan_cmake_templateTests"
 	@echo "... ExperimentalStart"
 	@echo "... NightlyBuild"
 	@echo "... ExperimentalBuild"
@@ -563,6 +562,7 @@ help:
 	@echo "... ContinuousMemCheck"
 	@echo "... ContinuousTest"
 	@echo "... ContinuousSubmit"
+	@echo "... cs194_webserverTests"
 	@echo "... main.test.o"
 	@echo "... main.test.i"
 	@echo "... main.test.s"

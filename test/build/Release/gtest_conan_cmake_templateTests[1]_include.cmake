@@ -1,5 +1,0 @@
-if(EXISTS "/home/sam/development/UniqueProjectName/test/build/Release/gtest_conan_cmake_templateTests[1]_tests.cmake")
-  include("/home/sam/development/UniqueProjectName/test/build/Release/gtest_conan_cmake_templateTests[1]_tests.cmake")
-else()
-  add_test(gtest_conan_cmake_templateTests_NOT_BUILT gtest_conan_cmake_templateTests_NOT_BUILT)
-endif()

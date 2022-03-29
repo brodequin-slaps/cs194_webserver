@@ -2,8 +2,8 @@
 
 import argparse
 
-parser = argparse.ArgumentParser(description='build either test or gtest_conan_cmake_template')
-parser.add_argument("--build_dir", type=str, choices=['gtest_conan_cmake_template', 'test'], 
+parser = argparse.ArgumentParser(description='build either test or cs194_webserver')
+parser.add_argument("--build_dir", type=str, choices=['cs194_webserver', 'test'], 
                         help='Which directory to build')
 
 parser.add_argument("--build_all_conan", dest='build_all', action='store_true', 

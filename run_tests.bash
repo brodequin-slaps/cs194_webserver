@@ -1,2 +1,2 @@
 #!/bin/bash
-test/build/Release/bin/gtest_conan_cmake_templateTests
+test/build/Release/bin/cs194_webserverTests

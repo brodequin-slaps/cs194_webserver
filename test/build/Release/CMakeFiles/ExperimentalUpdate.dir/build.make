@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sam/development/UniqueProjectName/test
+CMAKE_SOURCE_DIR = /home/sam/development/cs194/webserver/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sam/development/UniqueProjectName/test/build/Release
+CMAKE_BINARY_DIR = /home/sam/development/cs194/webserver/test/build/Release
 
 # Utility rule file for ExperimentalUpdate.
 
@@ -71,6 +71,6 @@ CMakeFiles/ExperimentalUpdate.dir/clean:
 .PHONY : CMakeFiles/ExperimentalUpdate.dir/clean
 
 CMakeFiles/ExperimentalUpdate.dir/depend:
-	cd /home/sam/development/UniqueProjectName/test/build/Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sam/development/UniqueProjectName/test /home/sam/development/UniqueProjectName/test /home/sam/development/UniqueProjectName/test/build/Release /home/sam/development/UniqueProjectName/test/build/Release /home/sam/development/UniqueProjectName/test/build/Release/CMakeFiles/ExperimentalUpdate.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sam/development/cs194/webserver/test/build/Release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sam/development/cs194/webserver/test /home/sam/development/cs194/webserver/test /home/sam/development/cs194/webserver/test/build/Release /home/sam/development/cs194/webserver/test/build/Release /home/sam/development/cs194/webserver/test/build/Release/CMakeFiles/ExperimentalUpdate.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalUpdate.dir/depend
 

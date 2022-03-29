@@ -1,1 +1,0 @@
-/usr/bin/clang++     -O3 -DNDEBUG        CMakeFiles/gtest_conan_cmake_template.dir/main.cpp.o  -o bin/gtest_conan_cmake_template 

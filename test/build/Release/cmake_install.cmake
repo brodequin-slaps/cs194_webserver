@@ -1,4 +1,4 @@
-# Install script for directory: /home/sam/development/UniqueProjectName/test
+# Install script for directory: /home/sam/development/cs194/webserver/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sam/development/UniqueProjectName/test/build/Release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sam/development/cs194/webserver/test/build/Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

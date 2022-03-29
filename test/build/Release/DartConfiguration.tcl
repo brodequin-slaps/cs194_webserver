@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/sam/development/UniqueProjectName/test
-BuildDirectory: /home/sam/development/UniqueProjectName/test/build/Release
+SourceDirectory: /home/sam/development/cs194/webserver/test
+BuildDirectory: /home/sam/development/cs194/webserver/test/build/Release
 
 # Where to place the cost data store
 CostDataFile: 
@@ -20,13 +20,13 @@ BuildName: Linux-clang++
 LabelsForSubprojects: 
 
 # Submission information
-SubmitURL: http://open.cdash.org/submit.php?project=gtest_conan_cmake_template
+SubmitURL: http://open.cdash.org/submit.php?project=cs194_webserver
 
 # Dashboard start time
 NightlyStartTime: 01:00:00 UTC
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/sam/development/UniqueProjectName/test"
+ConfigureCommand: "/usr/bin/cmake" "/home/sam/development/cs194/webserver/test"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

@@ -6,15 +6,16 @@
     "configurations": [
         {
             "type": "cppdbg",
-            "name": "Debug gtest_conan_cmake_template",
-            "program": "${workspaceFolder}/gtest_conan_cmake_template/build/Debug/bin/gtest_conan_cmake_template",
+            "name": "Debug cs194_webserver",
+            "program": "${workspaceFolder}/cs194_webserver/build/Debug/bin/cs194_webserver",
             "request": "launch",
-            "cwd": "${workspaceFolder}/gtest_conan_cmake_template/build/Debug/bin/"
+            "cwd": "${workspaceFolder}/cs194_webserver/build/Debug/bin/",
+            "args": ["sub"]
         },
         {
             "type": "cppdbg",
             "name": "Debug tests",
-            "program": "${workspaceFolder}/test/build/Debug/bin/gtest_conan_cmake_templateTests",
+            "program": "${workspaceFolder}/test/build/Debug/bin/cs194_webserverTests",
             "request": "launch",
             "cwd": "${workspaceFolder}/test/build/Debug/bin/"
         }

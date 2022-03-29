@@ -3,7 +3,7 @@
 #src abd test subdirectories added with add_subdirectory()
 
 cmake_minimum_required(VERSION 3.10)
-project(gtest_conan_cmake_template)
+project(cs194_webserver)
 
 #add project code
 add_subdirectory(src)

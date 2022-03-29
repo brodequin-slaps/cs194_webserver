@@ -6,5 +6,5 @@ if [ $? -ne 0 ]; then
 echo Compilation failed
 else
 echo Compilation success, running tests
-test/build/Release/bin/gtest_conan_cmake_templateTests
+test/build/Release/bin/cs194_webserverTests
 fi
