@@ -4,12 +4,13 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/sam/.conan/data/gtest/1.10.0/_/_/source/source_subfolder/googletest/include"
+                "/home/sam/.conan/data/gtest/1.10.0/_/_/source/source_subfolder/googletest/include",
+                "/home/sam/.conan/data/boost/1.78.0/_/_/source/source_subfolder/"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
+            "compilerPath": "/usr/bin/g++-11",
             "cStandard": "c11",
-            "intelliSenseMode": "linux-clang-x64",
+            "intelliSenseMode": "linux-gcc-x64",
             "compilerArgs": [],
             "cppStandard": "c++20",
             "browse": {

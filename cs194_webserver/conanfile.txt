@@ -1,8 +1,7 @@
 [requires]
-
+boost/1.78.0
 
 [options]
-
 
 [generators]
 cmake

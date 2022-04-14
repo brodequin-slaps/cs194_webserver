@@ -10,7 +10,7 @@ project(cs194_webserver VERSION 0.1)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_compile_options(-Wall -Wextra -pedantic -fno-exceptions
+add_compile_options(-Wall -Wextra -pedantic -fexceptions
     "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
     "$<$<CONFIG:RELEASE>:-Ofast>")
 
@@ -31,20 +31,27 @@ add_executable(cs194_webserver
     webserver_main.cpp 
     webserver_simple_sync.cpp
     webserver_dumb.cpp
+    webserver_process_per_client.cpp
+    webserver_thread_per_client.cpp
+    webserver_thread_pool.cpp
+    webserver_asio.cpp
     utils.cpp
+    globals.cpp
 )
 
 add_executable(cs194_tcpclient
     tcpclient_main.cpp
     dumb_clients.cpp
     utils.cpp
+    globals.cpp
 )
 
 add_executable(cs194_udpclient
     udpclient_main.cpp
     dumb_clients.cpp
     utils.cpp
+    globals.cpp
 )
 
 #link to conan libs
-target_link_libraries(cs194_webserver ${CONAN_LIBS})
+target_link_libraries(cs194_webserver ${CONAN_LIBS} pthread)

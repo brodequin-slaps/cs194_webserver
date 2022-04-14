@@ -20,12 +20,10 @@ void webserver_echo()
 {
     int status;
 
-    sockaddr_in addrport = 
-    {
-        .sin_family = AF_INET,
-        .sin_port = htons(10666),
-        .sin_addr.s_addr = htonl(INADDR_ANY)
-    };
+    sockaddr_in addrport;
+    addrport.sin_family = AF_INET;
+    addrport.sin_port = htons(10666);
+    addrport.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 
     //0 for protocol -> use default
     int sockid = socket(PF_INET, SOCK_STREAM, 0);
@@ -94,12 +92,10 @@ void webserver_dir(filesystem::path path)
 {
     int status;
 
-    sockaddr_in addrport = 
-    {
-        .sin_family = AF_INET,
-        .sin_port = htons(10666),
-        .sin_addr.s_addr = htonl(INADDR_ANY)
-    };
+    sockaddr_in addrport;
+    addrport.sin_family = AF_INET;
+    addrport.sin_port = htons(10666);
+    addrport.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 
     //0 for protocol -> use default
     int sockid = socket(PF_INET, SOCK_STREAM, 0);
@@ -115,7 +111,7 @@ void webserver_dir(filesystem::path path)
     int enable = 1;
     if (setsockopt(sockid, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) < 0)
     {
-        printerr("setsockopt(SO_REUSEADDR) failed");
+        printerr("setsockopt(SO_REUSEADDR) failed: ", strerror(errno));
     }
 
     status = bind(sockid, reinterpret_cast<sockaddr const*>(&addrport), sizeof(sockaddr_in));

@@ -60,6 +60,13 @@
         "map": "cpp",
         "ranges": "cpp",
         "cinttypes": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "mutex": "cpp",
+        "codecvt": "cpp",
+        "numbers": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "semaphore": "cpp",
+        "condition_variable": "cpp"
     }
 }

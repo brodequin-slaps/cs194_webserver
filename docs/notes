@@ -1,0 +1,7 @@
+30 mars 
+    - using fork makes files to stay open or reopen or be inherited or something like that
+        because after 1020 forks, we get to the ulimit of 1024 open files
+    - when the server crashes, how to go and manually delete the zombie socket?
+    - using lsof ater doing 100 requests to the server, we see than all the connections are still there.
+
+    

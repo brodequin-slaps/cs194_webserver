@@ -17,15 +17,17 @@ parser.set_defaults(build_all=False)
 parser.add_argument("--build_type", type=str, choices=['Debug', 'Release'], 
                         help='Debug or Release?')
 
+parser.add_argument("--conan_profile", type=str, help='Which conan profile to use?')
+
 args = parser.parse_args()
 
 
 cd @(args.build_dir)/build/@(args.build_type)
 
 if not args.build_all:
-    conan install ../.. --build=missing
+    conan install ../.. --build=missing -pr=@(args.conan_profile)
 else:
-    conan install ../.. -b
+    conan install ../.. -b -pr=@(args.conan_profile)
 
 
 cmake ../.. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=@(args.build_type)

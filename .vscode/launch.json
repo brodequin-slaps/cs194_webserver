@@ -10,7 +10,7 @@
             "program": "${workspaceFolder}/cs194_webserver/build/Debug/bin/cs194_webserver",
             "request": "launch",
             "cwd": "${workspaceFolder}/cs194_webserver/build/Debug/bin/",
-            "args": ["sub"]
+            "args": ["."]
         },
         {
             "type": "cppdbg",

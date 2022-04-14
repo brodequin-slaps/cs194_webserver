@@ -7,3 +7,5 @@
 - <projectName>/build/Debug
 
 2. And also search and replace all occurrences of `cs194_webserver` with the real project name.
+
+3. It currently uses the conan default configuration file in ~/.conan/profiles/default. Change that.

@@ -17,14 +17,12 @@ using namespace std;
 
 void webserver_process_per_client(filesystem::path path)
 {
-        int status;
+    int status;
 
-    sockaddr_in addrport = 
-    {
-        .sin_family = AF_INET,
-        .sin_port = htons(10666),
-        .sin_addr.s_addr = htonl(INADDR_ANY)
-    };
+    sockaddr_in addrport;
+    addrport.sin_family = AF_INET;
+    addrport.sin_port = htons(10666);
+    addrport.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
 
     //0 for protocol -> use default
     int sockid = socket(PF_INET, SOCK_STREAM, 0);
@@ -57,11 +55,31 @@ void webserver_process_per_client(filesystem::path path)
         return;
     }
 
-    while (keepRunning == 1)
+start:
     {
         sockaddr clientAddr;
         socklen_t addrLen = sizeof(sockaddr);
         int client_sockid = accept(sockid, &clientAddr, &addrLen);
+
+        pid_t pid = fork();
+        if (pid == -1)
+        {
+            printerr("Error during fork: ", strerror(errno));
+            exit(1);
+        }
+
+        if (pid == 0)
+        {
+            close(client_sockid); // needed because the child inherits sockets and eats open files
+            if (keepRunning == 1)
+            {
+                goto start;
+            }
+            else
+            {
+                exit(0);
+            }
+        }
 
         char recvbuf[recvbuf_sz];
         int count = recv(client_sockid, recvbuf, recvbuf_sz, 0);
@@ -84,11 +102,13 @@ void webserver_process_per_client(filesystem::path path)
 
         if (!istrm.is_open())
         {
-            cout << "Could not open file " << new_path << endl;
-            continue;
+            printerr("Error opening file: ", new_path, " : ", strerror(errno));
+            exit(1);
         }
 
         string file_content = read_whole_file(istrm);
+
+        istrm.close();
 
         stringstream resp;
 
@@ -98,6 +118,14 @@ void webserver_process_per_client(filesystem::path path)
             << file_content << endl;
 
         count = send(client_sockid, resp.str().c_str() , resp.str().size(), 0);
+
+        status = close(client_sockid);
+        if (status != 0)
+        {
+            printerr("socket close operation failed with code: ", status, ": ", strerror(errno));
+            exit(1);
+        }
+        exit(0);
     }
     //closes the connection (for stream sockets) and frees up the used port
     status = close(sockid);
